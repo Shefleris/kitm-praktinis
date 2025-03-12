@@ -5,7 +5,7 @@ const Page404 = () => {
   return (
     <>
         <h1>
-          Page not found
+          404 Puslapis nebuvo rastas
         </h1>
         <p>The page you were searching for could not be found</p>
         <Link to="/" className="btn btn-primary" >Return to homepage</Link>

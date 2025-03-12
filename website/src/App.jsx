@@ -1,20 +1,25 @@
 import { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Page imports
+// component imports
+import Header from './components/Header';
 
-
-const Homepage = lazy(()=>import('./pages/Homepage'));
-const Page404 = lazy(()=>import('./pages/Page404'));
+const Homepage = lazy(()=>import('./components/Homepage'));
+const Page404 = lazy(()=>import('./components/Page404'));
+const LoginCard = lazy(()=>import('./components/LoginCard'));
+const SignupCard = lazy(()=>import('./components/SignupCard'));
 
 function App() {
   return (
     <div className='container'>
       <BrowserRouter>
+      <Header/>
         <main>
           <Suspense fallback={<>loading...</>}>
             <Routes>
               <Route path="/" element={<Homepage/>}/>
+              <Route path="/login" element={<LoginCard/>}/>
+              <Route path="/signup" element={<SignupCard/>}/>
               <Route path="/*" element={<Page404/>}/>
             </Routes>
           </Suspense>
