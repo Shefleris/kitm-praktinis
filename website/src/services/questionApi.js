@@ -31,10 +31,10 @@ export const questionApi = async () => {
 		},
 		postQuestion: async (bodyData)=>{
 			const req = new Request(`${BaseApiUrl}/question`, {
+				
 				body:{...bodyData}
 			});
 			return fetchService(req);
 		}
-		
 	};
 };

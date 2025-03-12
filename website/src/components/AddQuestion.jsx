@@ -18,7 +18,7 @@ const AddQuestion = () => {
 		e.preventDefault();
 		setError(null)
 		try {
-				const res = await questionApi().postQuestion(formData)
+				const res = await questionApi().postQuestion(formData, token)
 				
 		} catch (err) {
 				setError(err)

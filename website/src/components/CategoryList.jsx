@@ -1,11 +1,21 @@
-import React, {useState, useEffect } from "react";
+import React from "react";
 
 const CategoryList = () => {
-
+	const [categories, setCategories] = useState(null)
+		useEffect(()=>{
+			const getCategories = async () =>{
+				return questionApi().getCategories()
+			}
+			setCategories(getCategories)
+		})
   return (
 		<>
 			<div>
-				<h1>This is the landing page</h1>
+				{!categories && categories.forEach(element => {
+					return (
+						element
+					)
+				})}
 			</div>
 		</>
 	)

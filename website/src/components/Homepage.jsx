@@ -7,6 +7,8 @@ const Homepage = () => {
     const getCategories = async () =>{
       return questionApi().getCategories()
     }
+    setCategories(getCategories)
+    const getQuestions = async
   })
   return (
 		<>
